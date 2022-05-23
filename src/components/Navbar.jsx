@@ -25,8 +25,18 @@ const Search = styled("div")(({ theme }) => ({
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
-  display: "flex",
+  display: "none",
+  alignItems: "center",
   gap: "20px",
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+  },
+}));
+
+const Userbox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  gap: "10px",
+  alignItems: "center",
 }));
 
 const Navbar = () => {
@@ -41,10 +51,10 @@ const Navbar = () => {
           <InputBase placeholder="search..." />{" "}
         </Search>
         <Icons>
-          <Badge badgeContent={4} color="secondary">
+          <Badge badgeContent={4} color="error">
             <Mail />
           </Badge>
-          <Badge badgeContent={4} color="success">
+          <Badge badgeContent={4} color="error">
             <Notifications />
           </Badge>
           <Avatar
@@ -52,6 +62,14 @@ const Navbar = () => {
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
         </Icons>
+
+        <Userbox>
+          <Avatar
+            sx={{ width: 30, height: 30 }}
+            src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          />
+          <Typography variant="span">Tata...</Typography>
+        </Userbox>
       </StyledToolbar>
     </AppBar>
   );
