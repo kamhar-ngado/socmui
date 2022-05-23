@@ -1,66 +1,20 @@
-import SettingsIcon from "@mui/icons-material/Settings";
-import { Button, Typography } from "@mui/material";
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
+import Rightbar from "./components/Rightbar";
+import Navbar from "./components/Navbar";
+import { Box, Stack } from "@mui/material";
 
-function App() {
-
-
-
+const App = () => {
   return (
-    <div>
-      <Button variant="text">Text</Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        startIcon={<SettingsIcon />}
-      >
-        Contained
-      </Button>
-      <Button variant="outlined" color="success">
-        Outlined
-      </Button>
-
-      <Typography variant="h1">the text uses h1 styles</Typography>
-
-      <Button
-        variant="contained"
-        sx={{
-          backgroundColor: "orange",
-          margin: "50px",
-          "&:hover": {
-            backgroundColor: "black",
-          },
-        }}
-      >
-        button1
-      </Button>
-
-      <Button
-        variant="contained"
-        sx={{
-          backgroundColor: "orange",
-          margin: "50px",
-          "&:hover": {
-            backgroundColor: "black",
-          },
-        }}
-      >
-        button2
-      </Button>
-
-      <Button
-        variant="contained"
-        sx={{
-          backgroundColor: "orange",
-          margin: "50px",
-          "&:hover": {
-            backgroundColor: "black",
-          },
-        }}
-      >
-        button3
-      </Button>
-    </div>
+    <Box>
+      <Navbar />
+      <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Stack>
+    </Box>
   );
-}
+};
 
 export default App;
