@@ -1,4 +1,13 @@
-import { Home } from "@mui/icons-material";
+import {
+  AccountBox,
+  Article,
+  Home,
+  ModeNight,
+  PeopleAlt,
+  Person,
+  Settings,
+  Store,
+} from "@mui/icons-material";
 import {
   Box,
   List,
@@ -6,6 +15,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Switch,
 } from "@mui/material";
 
 const Sidebar = () => {
@@ -23,6 +33,62 @@ const Sidebar = () => {
               <Home />
             </ListItemIcon>
             <ListItemText primary="Homepage" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+              <Article />
+            </ListItemIcon>
+            <ListItemText primary="Pages" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+              <PeopleAlt />
+            </ListItemIcon>
+            <ListItemText primary="Groups" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+              <Store />
+            </ListItemIcon>
+            <ListItemText primary="marketPlace" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+              <Person />
+            </ListItemIcon>
+            <ListItemText primary="Friends" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+              <Settings />
+            </ListItemIcon>
+            <ListItemText primary="Setting" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+              <AccountBox />
+            </ListItemIcon>
+            <ListItemText primary="Profile" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#home">
+            <ListItemIcon>
+              <ModeNight />
+            </ListItemIcon>
+            <Switch />
           </ListItemButton>
         </ListItem>
       </List>
