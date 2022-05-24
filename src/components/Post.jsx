@@ -10,10 +10,9 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-
 const Post = () => {
   return (
-    <Card sx={{ margin: 5 }}>
+    <Card sx={{ margin: 5, width: "100%", marginLeft: "-8px" }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
