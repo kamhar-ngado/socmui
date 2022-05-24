@@ -7,10 +7,13 @@ import {
   Typography,
   Badge,
   Avatar,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 
 import FunctionsIcon from "@mui/icons-material/Functions";
 import { Mail, Notifications } from "@mui/icons-material";
+import { useState } from "react";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -37,9 +40,13 @@ const Userbox = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "10px",
   alignItems: "center",
+  [theme.breakpoints.up("sm")]: {
+    display: "none",
+  },
 }));
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar position="sticky">
       <StyledToolbar>
@@ -60,10 +67,11 @@ const Navbar = () => {
           <Avatar
             sx={{ width: 30, height: 30 }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            onClick={(e) => setOpen(true)}
           />
         </Icons>
 
-        <Userbox>
+        <Userbox onClick={(e) => setOpen(true)}>
           <Avatar
             sx={{ width: 30, height: 30 }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -71,6 +79,25 @@ const Navbar = () => {
           <Typography variant="span">Tata...</Typography>
         </Userbox>
       </StyledToolbar>
+
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={(e) => setOpen(false)}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 };
